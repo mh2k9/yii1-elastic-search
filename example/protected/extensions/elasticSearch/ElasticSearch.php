@@ -2,8 +2,8 @@
 
 use Elasticsearch\ClientBuilder;
 
-require 'vendor/autoload.php';
-require 'ElasticSearchInterface.php';
+require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'vendor/autoload.php';
+require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'ElasticSearchInterface.php';
 
 class ElasticSearch extends ClientBuilder implements ElasticSearchInterface {
 	public $params = [];
