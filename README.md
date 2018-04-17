@@ -13,7 +13,7 @@ Installation
 1. download the project or clone from https://github.com/mh2k9/yii1-elastic-search.git
 2. Copy the ``protected/extensions/elasticSearch`` to your project extension direcory
 3. Add components to `main.php` 
-```
+```php
 'es' => [
     'class' => 'application.extensions.elasticSearch.ElasticSearch',
     'host' => '127.0.0.1:9200',
@@ -24,7 +24,7 @@ Installation
         'my_index3' => 'my_type2',
         // list all indexes and types [key value pare]
     ]
-],
+]
 ```
 
 Quick Start
@@ -33,13 +33,12 @@ Quick Start
 Get data by ID
 --
 **Query by ID**
-```
+```php
 $response = Yii::app()->es->getById('my_index', 'my_id');
-
 ```
 
 **Output look like**
-```
+```php
 Array
 (
     [_index] => my_index
@@ -58,7 +57,7 @@ Array
 Get by query
 --
 **Query**
-```
+```php
 $queryBody = [];
 $queryBody['_source'] = 'field1, field2, field3'; // An example of selected fields
 $queryBody['body'] = [
@@ -80,7 +79,7 @@ $response = Yii::app()->es->getByQuery('my_index', $queryBody);
 
 Query as per official [documentation](https://github.com/elastic/elasticsearch-php)
 ---
-```
+```php
 $params = [
     'index' => 'my_index',
     'type' => 'my_type',
